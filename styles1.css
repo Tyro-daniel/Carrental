@@ -1,0 +1,73 @@
+/* Global Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Body Styling */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: #f5f5f5;
+}
+
+/* Login Container */
+.login-container {
+    background: white;
+    padding: 60px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 400px;
+    border-radius: 20px;
+}
+
+/* Heading Styling */
+h2 {
+    margin-bottom: 15px;
+}
+
+/* Input Fields */
+input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Button Styling (For both login and create account) */
+button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    background-color: #007bff; /* Default color for both buttons */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+
+/* Specific Button for Create Account */
+#createAccountBtn {
+    background-color: #28a745; /* Green color for the create account button */
+}
+
+#createAccountBtn:hover {
+    background-color: #218838; /* Darker green on hover */
+}
+
+/* Error Message */
+#error-message {
+    color: red;
+    margin-top: 10px;
+}

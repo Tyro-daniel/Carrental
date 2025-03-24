@@ -1,0 +1,147 @@
+/* Global Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #D3D3D3;
+}
+
+/* Container for the whole page */
+.container {
+    margin-top: 30px;
+}
+
+/* Header Styles */
+header {
+    background-color: #333;
+    color: white;
+    padding: 5px 0;
+    text-align: left;
+    padding-left: 20px;
+}
+
+/* Main Content Section */
+main {
+    padding: 20px;
+    text-align: center;
+}
+
+/* Form Section */
+form {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 30px;
+}
+
+/* Form Title */
+h3 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #333;
+}
+
+/* Label Styles */
+.form-label {
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 8px;
+    display: block;
+}
+
+/* Input Field Styles */
+.form-control {
+    width: 30%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+/* Focused Input Field */
+.form-control:focus {
+    border-color: #007BFF;
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.5);
+}
+
+/* Submit Button Styling */
+button[type="submit"] {
+    background-color: #007BFF;
+    color: white;
+    padding: 15px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    width: 30%;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+/* Button Hover Effect */
+button[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+/* Responsive Design: Adjust form layout on small screens */
+@media (max-width: 767px) {
+    .container {
+        padding: 0 15px;
+    }
+
+    form {
+        padding: 10px;
+    }
+
+    .form-label {
+        font-size: 14px;
+    }
+
+    .form-control {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    button[type="submit"] {
+        font-size: 10px;
+        padding: 5px;
+    }
+}
+
+/* Section Heading for 24/7 Booking Access */
+h2 {
+    font-size: 28px;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+/* Paragraph styling for strong text */
+p strong {
+    color: #333;
+    font-weight: 600;
+}
+
+/* Footer Styles */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+/* Make the labels bold */
+.form-label {
+    font-weight: bold;
+}
+
+/* Optional: Adjust the placeholder text color and style if needed */
+.form-control::placeholder {
+    color: #999;
+}
+

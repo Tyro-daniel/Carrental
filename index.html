@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Rental System - FlexRide</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script>
+</head>
+<body>
+
+<header>
+    <div class="header-left">
+        <span class="menu-icon" onclick="toggleNav()">&#9776;</span> <!-- Menu icon without "X" -->
+		<a href="index.html" style="text-decoration: none;">
+        <h1 style="font-size: 24px; font-weight: bold; color: white;">FLEXRIDE</h1>
+    </a>
+    </div>
+
+    <nav class="header-right">
+        <a href="signup.html" class="auth-link">Sign Up</a>
+        <span> / </span>
+        <a href="login.html" class="auth-link">Log In</a>
+    </nav>	
+</header>
+
+<!-- Navigation Bar -->
+<nav id="navbar" class="navbar">
+    <a href="#"><i class="fas fa-home"></i> Home</a>
+    <a href="#"><i class="fas fa-car"></i> Vehicles</a>
+    <a href="#"><i class="fas fa-car-side"></i> Book a Car</a>
+    <a href="#"><i class="fas fa-phone"></i> Contact Us</a>
+    <a href="#"><i class="fas fa-cogs"></i> Services</a>
+    <a href="#"><i class="fas fa-question-circle"></i> Help</a>
+</nav>
+
+<!-- Carousel -->
+<main>
+    <div class="carousel">
+        <div class="carousel-container">
+            <div><img src="car2.JPEG" alt="Car Image 1"></div>
+            <div><img src="car1.JPEG" alt="Car Image 2"></div>
+            <div><img src="car.JPEG" alt="Car Image 3"></div>
+        </div>
+        <div class="carousel-dots">
+            <span class="dot" onclick="moveSlide(0)"></span>
+            <span class="dot" onclick="moveSlide(1)"></span>
+            <span class="dot" onclick="moveSlide(2)"></span>
+        </div>
+    </div>
+</main>
+
+<!-- Footer -->
+<footer>
+    <p>&copy; 2025 FlexRide. All Rights Reserved.</p>
+</footer>
+
+</body>
+</html>
