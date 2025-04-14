@@ -8,6 +8,10 @@
     <link rel="stylesheet" href="styles.css">
     <script defer src="script.js"></script>
 </head>
+<style>
+
+</style>
+<body>
 
 <header>
     <div class="header-left">
@@ -20,90 +24,97 @@
     <nav class="header-right">
         <a href="signup.html" class="auth-link">Sign Up</a>
         <span> / </span>
-        <a href="Login.HTML" class="auth-link">Log In</a>
+        <a href="login.html" class="auth-link">Log In</a>
     </nav>	
 </header>
 
 <!-- Navigation Bar -->
 <nav id="navbar" class="navbar">
-    <a href="index.html"><i class="fas fa-home"></i> Home</a>
-    <a href="#"><i class="fas fa-car"></i> Vehicles</a>
+    <a href="#"><i class="fas fa-home"></i> Home</a>
+    <a href="Vehicles.HTML"><i class="fas fa-car"></i> Vehicles</a>
     <a href="#"><i class="fas fa-car-side"></i> Book a Car</a>
-    <a href="About-Us.html"><i class="fas fa-phone"></i> About us</a>
-    <a href="services.html"><i class="fas fa-cogs"></i> Services</a>
+    <a href="#"><i class="fas fa-phone"></i> Contact Us</a>
+    <a href="#"><i class="fas fa-cogs"></i> Services</a>
     <a href="#"><i class="fas fa-question-circle"></i> Help</a>
 </nav>
-
-<body>
-
-    <!-- Hero Section -->
-    <section id="hero">
-        <div class="hero-content">
-            <h1>Find Your Perfect Car</h1>
-            <form class="search-form">
-                <input type="text" placeholder="Pick-up Location" required>
-                <input type="date" required>
-                <input type="date" required>
-                <button type="submit">Search Cars</button>
-            </form>
-        </div>
-    </section>
-
-     <!-- Services Section -->
-     <section id="services">
-        <div class="service-card">
-            <h2>Luxury & Economy Cars</h2>
-            <p>Choose from a wide range of luxury and economy cars to fit your travel needs.</p>
-        </div>
-        <div class="service-card">
-            <h2>24/7 Customer Support</h2>
-            <p>Our dedicated support team is available 24/7 to assist you with your rental.</p>
-        </div>
-    </section>
-
-    <!-- Car Selection Section -->
-    <section id="cars">
-        <h2>Available Cars</h2> 
-        <br>
-        <div class="car-grid">
-            <!-- Each car card -->
-            <div class="car-card">
-                <img src="car-image1.jpg" alt="Car">
-                <h3>Lada 2101</h3>
-                <p>Price: $50/day</p>
-                <button>Book Now</button>
+    <div class="carousel">
+        <div class="carousel-container">
+            <div class="carousel-slide">
+                <img src="KiaEVG.AVIF" alt="Car Image 1">
+                <div class="carousel-caption">Drive the Best, Rent with Ease!</div>
+            </div>
+            <div class="carousel-slide">
+                <img src="Rolls.avif" alt="Car Image 2">
+            </div>
+            <div class="carousel-slide">
+                <img src="Fordfiesta.jpg" alt="Car Image 3">
             </div>
         </div>
-        <div class="car-grid">
-            <!-- Each car card -->
-            <div class="car-card">
-                <img src="car-image1.jpg" alt="Car">
-                <h3>Lada 2101</h3>
-                <p>Price: $50/day</p>
-                <button>Book Now</button>
-            </div>
+        <div class="carousel-dots">
+            <span class="dot" onclick="moveSlide(0)"></span>
+            <span class="dot" onclick="moveSlide(1)"></span>
+            <span class="dot" onclick="moveSlide(2)"></span>
         </div>
-        <div class="car-grid">
-            <!-- Each car card -->
-            <div class="car-card">
-                <img src="car-image1.jpg" alt="Car">
-                <h3>Lada 2101</h3>
-                <p>Price: $50/day</p>
-                <button>Book Now</button>
-            </div>
+    </div>
+
+<!-- New Section with Four Images, Each in Its Own Catalog Container -->
+<p style="text-align: center; margin-top: 20px; color: blue;">What we offer</p>
+<h2 style="text-align: center; margin-top: 20px;">Explore Our Premium Collection</h2>
+<section class="image-gallery">
+    <div class="catalog-container">
+        <div class="gallery-item">
+            <img src="Bemerc.WEBP" alt="Luxury Car 1">
         </div>
-        <div class="car-grid">
-            <!-- Each car card -->
-            <div class="car-card">
-                <img src="car-image1.jpg" alt="Car">
-                <h3>Lada 2101</h3>
-                <p>Price: $50/day</p>
-                <button>Book Now</button>
-            </div>
+        <h3>MERCEDES GRAND SEDAN</h3>
+        <p>$70,000</p> <!-- Price added -->
+        <div class="button-container">
+            <button class="btn-book">Book</button>
+            <button class="btn-details">Details</button>
         </div>
-    </section>
+    </div>
+
+    <div class="catalog-container">
+        <div class="gallery-item">
+            <img src="133.JPG" alt="Luxury Car 2">
+        </div>
+        <h3>MERCEDES-BENZ CLASS A L BERLINA</h3>
+        <p>$55,000</p> <!-- Price added -->
+        <div class="button-container">
+            <button class="btn-book">Book</button>
+            <button class="btn-details">Details</button>
+        </div>
+    </div>
+
+    <div class="catalog-container">
+        <div class="gallery-item">
+            <img src="Dodge.WEBP" alt="Luxury Car 3">
+        </div>
+        <h3>DODGE CHARGER</h3>
+        <p>$45,000</p> <!-- Price added -->
+        <div class="button-container">
+            <button class="btn-book">Book</button>
+            <button class="btn-details">Details</button>
+        </div>
+    </div>
+
+    <div class="catalog-container">
+        <div class="gallery-item">
+            <img src="GTD.JPG" alt="Luxury Car 4">
+        </div>
+        <h3>MUSTANG GTD</h3>
+        <p>$65,000</p> <!-- Price added -->
+        <div class="button-container">
+            <button class="btn-book">Book</button>
+            <button class="btn-details">Details</button>
+        </div>
+    </div>
+</section>
+
+
+<!-- Footer -->
+<footer>
+    <p>&copy; 2025 FlexRide. All Rights Reserved.</p>
+</footer>
 
 </body>
 </html>
-
-                                                                                  

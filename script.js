@@ -16,24 +16,73 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 
-    // Move slider when clicking on dots
-    const container = document.querySelector(".carousel-container");
-    const dots = document.querySelectorAll(".dot");
-    let index = 0;
+    // First Carousel (Carousel 1)
+    let currentSlide1 = 0;
+    const slides1 = document.querySelectorAll('.carousel-1 .carousel-slide');
+    const dots1 = document.querySelectorAll('.carousel-1 .dot');
+    const container1 = document.querySelector('.carousel-1 .carousel-container');
 
-    function moveSlide(newIndex) {
-        index = newIndex;
-        const offset = index * -900;
-        container.style.transform = `translateX(${offset}px)`;
+    // Function to show a specific slide in Carousel 1
+    function showSlide1(index) {
+        if (index >= slides1.length) currentSlide1 = 0;
+        if (index < 0) currentSlide1 = slides1.length - 1;
 
-        // Update active dot
-        dots.forEach(dot => dot.classList.remove("active"));
-        dots[index].classList.add("active");
+        container1.style.transform = `translateX(-${currentSlide1 * 100}%)`;
+
+        dots1.forEach(dot => dot.classList.remove('active'));
+        dots1[currentSlide1].classList.add('active');
     }
 
-    // Initialize first dot as active
-    dots[index].classList.add("active");
+    // Function to move to the next slide automatically for Carousel 1
+    function autoSlide1() {
+        currentSlide1++;
+        showSlide1(currentSlide1);
+    }
 
-    // Make moveSlide function globally accessible
-    window.moveSlide = moveSlide;
+    // Function to move to a specific slide when clicked in Carousel 1
+    window.moveSlide1 = function (index) {
+        currentSlide1 = index;
+        showSlide1(currentSlide1);
+    };
+
+    // Automatically change slide every 5 seconds for Carousel 1
+    setInterval(autoSlide1, 5000); // Carousel 1
+
+    // Initialize the first slide and first dot for Carousel 1
+    showSlide1(currentSlide1);
+
+    // Second Carousel (Carousel 2)
+    let currentSlide2 = 0;
+    const slides2 = document.querySelectorAll('.carousel-2 .carousel-slide');
+    const dots2 = document.querySelectorAll('.carousel-2 .dot');
+    const container2 = document.querySelector('.carousel-2 .carousel-container');
+
+    // Function to show a specific slide in Carousel 2
+    function showSlide2(index) {
+        if (index >= slides2.length) currentSlide2 = 0;
+        if (index < 0) currentSlide2 = slides2.length - 1;
+
+        container2.style.transform = `translateX(-${currentSlide2 * 100}%)`;
+
+        dots2.forEach(dot => dot.classList.remove('active'));
+        dots2[currentSlide2].classList.add('active');
+    }
+
+    // Function to move to the next slide automatically for Carousel 2
+    function autoSlide2() {
+        currentSlide2++;
+        showSlide2(currentSlide2);
+    }
+
+    // Function to move to a specific slide when clicked in Carousel 2
+    window.moveSlide2 = function (index) {
+        currentSlide2 = index;
+        showSlide2(currentSlide2);
+    };
+
+    // Automatically change slide every 5 seconds for Carousel 2
+    setInterval(autoSlide2, 5000); // Carousel 2
+
+    // Initialize the first slide and first dot for Carousel 2
+    showSlide2(currentSlide2);
 });

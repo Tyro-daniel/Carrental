@@ -1,0 +1,103 @@
+/* Container for all images */
+.image-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 30px;
+    margin-top: 20px;
+}
+
+/* Individual Image Block */
+.image-item {
+    width: 48%;  /* Set width to 48% to fit two items in a row */
+    position: relative;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s ease; /* Smooth transition on hover */
+}
+
+/* Image Styling */
+.image-item img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    transition: transform 0.2s ease; /* Smooth transition on hover */
+}
+
+/* Hover effect on image item */
+.image-item:hover {
+    transform: scale(1.05); /* Slightly scale the image when hovered */
+}
+
+/* Hover effect on image */
+.image-item img:hover {
+    transform: scale(1.1); /* Slightly scale the image itself when hovered */
+}
+
+/* Text on Image (optional) */
+.image-item .category-text {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 8px 10px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 767px) {
+    .image-item {
+        width: 48%; /* Two images per row on small screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .image-item {
+        width: 100%; /* One image per row on very small screens */
+    }
+}
+
+/* Header Styling */
+header {
+    background-color: #333;
+    padding: 20px 20px; /* Adjust padding for header */
+    position: fixed; /* Make the header fixed at the top */
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10; /* Ensure the header stays on top of other content */
+}
+
+header h2 {
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+    text-align: left; /* Align the title to the left */
+    margin: 0; /* Remove any default margin */
+}
+
+/* Footer Styling */
+footer {
+    background-color: #ccc;
+    padding: 15px;
+    width: 100%;
+    text-align: center;
+    position: relative;  /* Change from fixed to relative */
+    bottom: 0;
+    left: 0;
+    z-index: 999;
+    margin-top: 20px; /* Ensure space between content and footer */
+}
+
+/* Ensure footer stays at the bottom when the content is smaller */
+body {
+    min-height: 100vh; /* Set the body to fill the full height of the screen */
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1; /* Allow main content to take available space */
+}
