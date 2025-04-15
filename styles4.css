@@ -147,10 +147,3 @@ footer p {
 .details-button:hover {
     background-color: #3FE0D0;
 }
-.car-info-container {
-    width: 100%;
-    background-color: gey;
-    padding: 20px;
-    border-radius: 12px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-}
