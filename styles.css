@@ -1,21 +1,9 @@
+
 /* Global Styles */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-}
-
-body {
-    font-family: Arial, sans-serif;
-    text-align: center;
-    position: relative;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    background: #f4f4f4;
-    margin-top: 60px;
 }
 
 /* Header Styling */
@@ -94,7 +82,7 @@ header {
     color: white;
     width: 100%;
     transition: background 0.3s ease, color 0.3s ease;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2); /* Horizontal separator */
 }
 
 .navbar a:hover {
@@ -110,179 +98,290 @@ header {
     margin-right: 10px;
 }
 
-/* Carousel Styles */
-.carousel {
-    width: 900px;
-    height: 500px;
-    overflow: hidden;
+/* Resetting some default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Hero Section Styling */
+#hero {
+    background-image: url('hero-background.jpg'); /* Add your background image */
+    background-size: cover;
+    background-position: center;
     border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
     position: relative;
 }
 
-.carousel-container {
-    display: flex;
-    transition: transform 0.5s ease-in-out;
+#hero .hero-content {
+    z-index: 1;
 }
 
-.carousel-container div {
-    flex-shrink: 0;
+#hero h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.search-form {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.search-form input, .search-form button {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    font-size: 1rem;
+}
+
+.search-form button {
+    background-color: #22aeff; /* Button color */
+    color: white;
+    cursor: pointer;
+}
+
+.search-form button:hover {
+    background-color: #0978d3; /* Hover effect */
+}
+
+/* Services Section */
+#services {
+    display: inline-flex;
+    justify-content: space-around;
+    padding: 40px 10%;
+    background-color: #fff;
+    flex-wrap: wrap;
+   
+}
+
+.service-card {
+    width: 80%;
+    height: 250px;
+    background-color: #f8f8f8;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin-top: 35px;
+    margin-right: 30px;
+    margin-left: 40px;
+    margin-bottom: 10px;
+}
+
+/* Hover Effect */
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.service-card h2 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+}
+
+.service-card p {
+    font-size: 1.2rem;
+}
+
+/* Responsive hero &Services Section */
+@media (max-width: 768px) {
+    #hero-content{
+        display: grid;
+        grid-template-columns: auto;
+        align-items: center;
+        justify-self: center;
+        
+    }
+    .hero-content{
+        display: grid;
+        grid-template-columns: auto;
+        align-items: center;
+        justify-self: center;
+        
+    }
+    .hero-content h1{
+        font-size: 2.5rem;
+        margin-top: 2rem;
+    }
+
+    #services {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .service-card {
+        width: 90%;
+        margin-bottom: 20px;
+        height: max-content;
+    }
+}
+
+/* Car Selection Section */
+#cars {
+    display: inline-flex;
+    padding: 50px 20px;
+    background-color: #f4f4f4;
+    text-align: center;
     width: 100%;
 }
 
-.carousel-slide {
-    position: relative;
+#cars h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
     text-align: center;
+    
 }
 
-.carousel img {
-    width: 900px;
-    height: 500px;
-    object-fit: cover;
-}
-.carousel-caption {
-    position: absolute;
-    top: 50%;  /* Move to the middle vertically */
-    left: 50%; /* Move to the middle horizontally */
-    transform: translate(-50%, -50%); /* Perfectly center it */
-    color: white;
-    padding: 10px 15px;
-    font-size: 30px;
-    font-weight: bold;
-    border-radius: 5px;
-    text-align: center;
-    width: max-content;
+.car-grid {
+    padding-top: 60px;
+    padding-right: 20px;
+    flex-wrap: wrap;
+    display: inline-flex;
+    gap: 20px;
+    justify-items: center;
+    width: 100%;
+
 }
 
-/* Dots for manual navigation */
-.carousel-dots {
-    position: absolute;
-    bottom: 15px;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    gap: 10px;
-}
-
-.dot {
-    width: 15px;
-    height: 15px;
-    background-color: rgba(255, 255, 255, 0.5);
-    border-radius: 50%;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-.dot.active {
+.car-card {
     background-color: white;
-}
-.image-gallery {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
     padding: 20px;
-}
-.catalog-container {
-    width: 270px; /* Slightly larger than image */
-    height: 400px; /* Adjust the height as needed */
-    padding: 15px;
-    background-color: #f8f9fa; /* Light background for contrast */
     border-radius: 10px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     text-align: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: center; /* Centers content vertically */
+    width: 250px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-
-.gallery-item {
-    flex: 1;
-    max-width: 250px; /* Adjust max width */
+.car-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
-.gallery-item img {
-    width: 250px; /* Set a fixed width */
-    height: 250px; /* Set a fixed height */
-    object-fit: cover; /* Ensures the image maintains aspect ratio and fills the dimensions */
-    border-radius: 8px;
-    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
-}
-.button-container {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 10px;
+.car-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 15px;
 }
 
-.btn-book, .btn-details {
-    padding: 10px 20px;
-    border: none;
-    background-color: #007BFF;
+.car-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.car-card p {
+    font-size: 1.2rem;
+margin-bottom: 15px;
+}
+
+#cars button {
+    background-color: #000000; /* black button */
     color: white;
-    cursor: pointer;
+    padding: 10px;
     border-radius: 5px;
-    font-size: 14px;
-}
-
-.btn-book:hover, .btn-details:hover {
-    background-color: #0056b3;
-}
-
-
-/* First Carousel Styles */
-.carousel-1 {
-    width: 900px;
-    height: 500px;
-    overflow: hidden;
-    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    width: 90%;
+    height: 80px;
+    margin-top: 150px;
     position: relative;
+
+    
 }
 
-.carousel-1 .carousel-container {
-    display: flex;
-    transition: transform 0.5s ease-in-out;
+#cars button:hover {
+    background-color: #45a049;
 }
 
-.carousel-1 .carousel-slide {
-    position: relative;
-    text-align: center;
+/* Responsive Car Grid */
+@media (max-width: 1024px) {
+    #cars{
+        display: grid;
+        grid-template-columns: auto;
+    }
+    .car-grid {
+        justify-content: center;
+       
+    }
+
+    .car-card {
+        width: 45%;
+    }
+
+    #cars button {
+        background-color: #000000; /* black button */
+        color: white;
+        padding: 10px;
+        border-radius: 5px;
+        border: none;
+        cursor: pointer;
+        width: 90%;
+        margin-top: 145px;
+         
+    }
 }
 
-.carousel-1 img {
-    width: 900px;
-    height: 500px;
-    object-fit: cover;
+@media (max-width: 700px) {
+    #cars{
+        display: grid;
+        grid-template-columns: auto;
+    }
+    
+    .car-grid {
+        display: block;
+        flex-direction: column;
+        align-items: center;
+           
+    }
+    .car-grid h3{
+        font-size: 1.1rem;
+    }
+    .car-grid p{
+        font-size: 0.9rem;
+    }
+
+    .car-card {
+        width: 70%;
+    }
+    #cars button {
+        background-color: #000000; /* black button */
+        color: white;
+        padding: 10px;
+        border-radius: 5px;
+        border: none;
+        cursor: pointer;
+        width: 90%;
+        height: 80px;
+        margin-top: 50px;
+    
+        
+    }
 }
 
-/* Second Carousel Styles */
-.carousel-2 {
-    width: 900px;
-    height: 500px;
-    overflow: hidden;
-    border-radius: 10px;
-    position: relative;
-}
-
-.carousel-2 .carousel-container {
-    display: flex;
-    transition: transform 0.5s ease-in-out;
-}
-
-.carousel-2 .carousel-slide {
-    position: relative;
-    text-align: center;
-}
-
-.carousel-2 img {
-    width: 900px;
-    height: 500px;
-    object-fit: cover;
-}
-
-
-/* Footer stays at the bottom */
+/* Footer */
 footer {
     background-color: #ccc;
     padding: 15px;
     width: 100%;
     text-align: center;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 999;
 }
