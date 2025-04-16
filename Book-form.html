@@ -1,0 +1,64 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Rental System - FlexRide</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="Book-form.css">
+    <script defer src="script.js"></script>
+</head>
+<header>
+    <div class="header-left">
+        <span class="menu-icon" onclick="toggleNav()">&#9776;</span> <!-- Menu icon without "X" -->
+		<a href="index.html" style="text-decoration: none;">
+        <h1 style="font-size: 24px; font-weight: bold; color: white;">FLEXRIDE</h1>
+    </a>
+    </div>
+
+    <nav class="header-right">
+        <a href="signup.html" class="auth-link">Sign Up</a>
+        <span> / </span>
+        <a href="Login.HTML" class="auth-link">Log In</a>
+    </nav>	
+</header>
+    <!-- Navigation Bar -->
+<nav id="navbar" class="navbar">
+    <a href="CarRental.html"><i class="fas fa-home"></i> Home</a>
+    <a href="#"><i class="fas fa-car"></i> Vehicles</a>
+    <a href="#"><i class="fas fa-car-side"></i> Book a Car</a>
+    <a href="About-Us.html"><i class="fas fa-phone"></i> About us</a>
+    <a href="services.html"><i class="fas fa-cogs"></i> Services</a>
+    <a href="#"><i class="fas fa-question-circle"></i> Help</a>
+</nav>
+<body>
+    <section id="Form">
+        <h3>Complete your booking</h3>
+        <form class="Book-form">
+            <input type="text" placeholder="Pick-up Location" required>
+            <input type="date" placeholder="Pick-up date" required>
+            <input type="date" placeholder="drop-off date" required>
+            <input type="email" placeholder="@email so we could send you your receipt" required>
+        </form>
+
+        <fieldset disabled="disabled">price/day</fieldset>
+
+        <button type="submit">Submit</button>
+        <button type="submit">Cancel</button>
+         
+    </section>
+    <section id="Users-choice">
+        <div class="car-card">
+            <img src="" alt="Car image">
+        </div>
+        <div class="car-info">
+            <p>.........x..........</p>
+            <p>##### ^###############</p>
+            <p>@@@@@@@@@@ %@@@@@@@@@@@@</p>
+        </div>
+    </section>
+</body>
+<footer>
+    <a>Hello im under the water</a>
+</footer>
+</html>
