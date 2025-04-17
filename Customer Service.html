@@ -1,0 +1,93 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Rental System - FlexRide</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="Customer Service.css">
+    <script defer src="script.js"></script>
+</head>
+
+<header>
+    <div class="header-left">
+        <span class="menu-icon" onclick="toggleNav()">&#9776;</span> <!-- Menu icon without "X" -->
+		<a href="index.html" style="text-decoration: none;">
+        <h1 style="font-size: 24px; font-weight: bold; color: white;">FLEXRIDE</h1>
+    </a>
+    </div>
+
+    <nav class="header-right">
+        <a href="signup.html" class="auth-link">Sign Up</a>
+        <span> / </span>
+        <a href="Login.HTML" class="auth-link">Log In</a>
+    </nav>	
+</header>
+
+<!-- Navigation Bar -->
+<nav id="navbar" class="navbar">
+    <a href="CarRental.html"><i class="fas fa-home"></i> Home</a>
+    <a href="#"><i class="fas fa-car"></i> Vehicles</a>
+    <a href="#"><i class="fas fa-car-side"></i> Book a Car</a>
+    <a href="About-Us.html"><i class="fas fa-phone"></i> About us</a>
+    <a href="services.html"><i class="fas fa-cogs"></i> Services</a>
+    <a href="#"><i class="fas fa-question-circle"></i> Help</a>
+</nav>
+
+<body>
+
+    <!-- Hero Section -->
+    <section id="hero">
+        <div class="hero-content">
+            <h1>Find Your Perfect Car</h1>
+            <form class="search-form">
+                <input type="text" placeholder="Pick-up Location" required>
+                <input type="date" required>
+                <input type="date" required>
+                <button type="submit">Search Cars</button>
+            </form>
+        </div>
+    </section>
+    <!--Customer Service-->
+    <section id="Customer-Service">
+        <h3>Customer Service</h3>
+        <div class="Customer-Service-card">
+            <div class="C-S-c-contents">
+                <h4>Making a booking</h4>
+                <a href="#"><li>Parment methods</li></a>
+                <a href="#"><li>Billing</li></a>
+                <a href="#"><li>Rules during rental</li></a>
+            </div> 
+        </div>
+        <div class="Customer-Service-card">
+            <div class="C-S-c-contents">
+                <h4>Picking up your rented car</h4>
+                <a href="#"><li>Things to know</li></a>
+                <a href="#"><li>Location</li></a>
+                <a href="#"><li>Pick-up requirements</li></a>
+            </div> 
+        </div>
+        <div class="Customer-Service-card">
+            <div class="C-S-c-contents">
+                <h4>Post return</h4>
+                <a href="#"><li>Lost & found items</li></a>
+                <a href="#"><li>Billing</li></a>
+            <a href="#"><li></li></a>
+            </div> 
+        </div>
+        <div class="Customer-Service-card">
+            <div class="C-S-c-contents">
+                <h4>Emergencies during rental</h4>
+                <a href="#"><li>Problems during rental</li></a>
+                <a href="#"><li>Services</li></a>
+                <a href="#"><li>Who to call</li></a>
+            </div> 
+        </div>
+        
+    </section>
+    
+</body>
+<footer>
+    <a>Hello im under the water</a>
+</footer>
+</html>
