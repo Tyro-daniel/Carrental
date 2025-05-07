@@ -80,15 +80,60 @@ header h2 {
 
 /* Footer Styling */
 footer {
-    background-color: #ccc;
-    padding: 15px;
-    width: 100%;
+  background-color: #333;
+  color: #fff;
+  padding: 40px 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  position: relative;
+}
+.footer-section {
+  flex: 1 1 200px;
+  margin: 10px;
+}
+.footer-section h3 {
+  border-bottom: 1px solid #555;
+  padding-bottom: 10px;
+}
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+}
+.footer-section ul li {
+  margin: 8px 0;
+}
+.footer-section a {
+  color: #ccc;
+  text-decoration: none;
+}
+.footer-section a:hover {
+  color: #fff;
+  text-decoration: underline;
+}
+.social-icons {
+  display: flex;
+  gap: 15px;
+  margin-top: 10px;
+}
+.social-icons a {
+  color: #ccc;
+  font-size: 24px;
+  transition: color 0.3s;
+}
+.social-icons a:hover {
+  color: #1da1f2;
+}
+@media (max-width: 600px) {
+  footer {
+    flex-direction: column;
+    align-items: center;
+  }
+  .footer-section {
     text-align: center;
-    position: relative;  /* Change from fixed to relative */
-    bottom: 0;
-    left: 0;
-    z-index: 999;
-    margin-top: 20px; /* Ensure space between content and footer */
+  }
+}
+
 }
 
 /* Ensure footer stays at the bottom when the content is smaller */
