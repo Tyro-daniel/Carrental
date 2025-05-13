@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin - Moderate Activity</title>
+  <link rel="stylesheet" href="moderate-activity.css">
+</head>
+<body>
+  <header>
+    <h1>Admin Control Panel</h1>
+  </header>
+  <nav>
+    <ul>
+      <li><a href="#">Manage Content</a></li>
+      <li><a href="#">Manage Users</a></li>
+      <li><a href="#">View Analytics</a></li>
+      <li><a href="#" class="active">Moderate Activity</a></li>
+      <li><a href="#">Settings</a></li>
+    </ul>
+  </nav>
+  <main>
+    <h2>Moderate Activity</h2>
+    <section class="moderation-section">
+      <h3>Pending Comments</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>User</th>
+            <th>Comment</th>
+            <th>Date</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>JohnDoe</td>
+            <td>Great car rental experience!</td>
+            <td>2025-04-28</td>
+            <td>
+              <button class="btn-approve">Approve</button>
+              <button class="btn-reject">Reject</button>
+            </td>
+          </tr>
+          <tr>
+            <td>JaneSmith</td>
+            <td>Had some issues with pickup delay.</td>
+            <td>2025-04-27</td>
+            <td>
+              <button class="btn-approve">Approve</button>
+              <button class="btn-reject">Reject</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="moderation-section">
+      <h3>Pending Reviews</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>User</th>
+            <th>Rating</th>
+            <th>Review</th>
+            <th>Date</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>AutoFan88</td>
+            <td>★★★★★</td>
+            <td>Highly recommend the Tesla Model X!</td>
+            <td>2025-04-26</td>
+            <td>
+              <button class="btn-approve">Approve</button>
+              <button class="btn-reject">Reject</button>
+            </td>
+          </tr>
+          <tr>
+            <td>RenterPro</td>
+            <td>★★★☆☆</td>
+            <td>Car was okay but had low tire pressure.</td>
+            <td>2025-04-25</td>
+            <td>
+              <button class="btn-approve">Approve</button>
+              <button class="btn-reject">Reject</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+  </main>
+  <footer>
+    &copy; 2025 Car Rental Admin Panel
+  </footer>
+</body>
+</html>

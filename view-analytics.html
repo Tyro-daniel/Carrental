@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Admin - View Analytics</title>
+  <link rel="stylesheet" href="view-analytics.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <header>
+    <h1>Admin Control Panel</h1>
+  </header>
+  <nav>
+    <ul>
+      <li><a href="Manage-Content.html">Manage Content</a></li>
+      <li><a href="Manage-Users.html">Manage Users</a></li>
+      <li><a href="view-analytics.html" class="active">View Analytics</a></li>
+      <li><a href="#">Moderate Activity</a></li>
+      <li><a href="#">Settings</a></li>
+    </ul>
+  </nav>
+  <main>
+    <h2>View Analytics</h2>
+
+    <section class="analytics-section">
+      <h3>Booking Trends</h3>
+      <canvas id="bookingTrendsChart" width="400" height="200"></canvas>
+    </section>
+
+    <section class="analytics-section">
+      <h3>Revenue Breakdown</h3>
+      <canvas id="revenueBreakdownChart" width="400" height="200"></canvas>
+    </section>
+  </main>
+  <footer>
+    &copy; 2025 Car Rental Admin Panel
+  </footer>
+
+  <script>
+    // Booking Trends - Line Chart
+    const bookingCtx = document.getElementById('bookingTrendsChart').getContext('2d');
+    const bookingTrendsChart = new Chart(bookingCtx, {
+      type: 'line',
+      data: {
+        labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
+        datasets: [{
+          label: 'Number of Bookings',
+          data: [120, 150, 180, 130, 200, 170],
+          backgroundColor: 'rgba(0, 123, 255, 0.2)',
+          borderColor: 'rgba(0, 123, 255, 1)',
+          borderWidth: 2,
+          fill: true,
+          tension: 0.3
+        }]
+      },
+      options: {
+        responsive: true,
+        plugins: {
+          legend: { display: false }
+        }
+      }
+    });
+
+    // Revenue Breakdown - Pie Chart
+    const revenueCtx = document.getElementById('revenueBreakdownChart').getContext('2d');
+    const revenueBreakdownChart = new Chart(revenueCtx, {
+      type: 'pie',
+      data: {
+        labels: ['SUV', 'Sedan', 'Van', 'Luxury'],
+        datasets: [{
+          data: [40, 30, 20, 10],
+          backgroundColor: [
+            'rgba(255, 99, 132, 0.7)',
+            'rgba(54, 162, 235, 0.7)',
+            'rgba(255, 206, 86, 0.7)',
+            'rgba(75, 192, 192, 0.7)'
+          ],
+          borderColor: '#fff',
+          borderWidth: 1
+        }]
+      },
+      options: {
+        responsive: true,
+        plugins: {
+          legend: { position: 'bottom' }
+        }
+      }
+    });
+  </script>
+</body>
+</html>
