@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="chatbot.css">
+        <style>
+            #chatbot-btn {
+              position: fixed; bottom: 20px; right: 20px;
+              width: 60px; height: 60px; border-radius: 50%;
+              background: #007BFF; color: white; font-size: 30px; border: none;
+              box-shadow: 0 4px 8px rgba(0,0,0,0.3); cursor: pointer;
+            }
+            #chatbot-window {
+              position: fixed; bottom: 90px; right: 20px;
+              width: 300px; height: 400px; background: white;
+              border: 1px solid #ccc; border-radius: 8px;
+              box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+              display: flex; flex-direction: column;
+            }
+            #chat-messages {
+              flex: 1; overflow-y: auto; padding: 10px;
+            }
+            #chat-input {
+              border: none; border-top: 1px solid #ccc; padding: 10px;
+              width: calc(100% - 20px);
+            }
+        </style>
+            
+    </head>
+    <body>
+       <!-- Floating Chatbot Button -->
+<button id="chatbot-btn">💬 Chat</button>
+
+<!-- Chat Window -->
+<div id="chatbot-window" style="display:none;">
+  <div id="chat-messages"></div>
+  <input type="text" id="chat-input" placeholder="Type your message..." />
+</div>
+
+<script>
+    const btn = document.getElementById('chatbot-btn');
+    const windowEl = document.getElementById('chatbot-window');
+    const input = document.getElementById('chat-input');
+    const messages = document.getElementById('chat-messages');
+    
+    // Toggle chat window
+    btn.addEventListener('click', () => {
+      windowEl.style.display = windowEl.style.display === 'block' ? 'none' : 'block';
+    });
+    
+    // Handle user input
+    input.addEventListener('keypress', (e) => {
+      if (e.key === 'Enter') {
+        const userMsg = input.value.trim();
+        if (userMsg) {
+          addMessage('You: ' + userMsg);
+          getBotReply(userMsg);
+          input.value = '';
+        }
+      }
+    });
+    
+    function addMessage(text) {
+      messages.innerHTML += '<div>' + text + '</div>';
+      messages.scrollTop = messages.scrollHeight;
+    }
+    
+    function getBotReply(userMsg) {
+      // Simple hardcoded replies
+      let reply = 'Sorry, I didn\'t understand that.';
+      if (userMsg.includes('hello')) reply = 'Hi there! How can I help you?';
+      if (userMsg.includes('price')) reply = 'Our prices start at $50/day.';
+      
+      setTimeout(() => {
+        addMessage('Bot: ' + reply);
+      }, 500);
+    }
+    </script>
+    
+                     
+    </body>
+    <footer>
+       <div id="container">
+          <div class="footer-content">
+            <h4>Quick links</h4>
+              <ul class="list">
+                <li><a href="">About Us</a></li>
+                <li><a href="">Help</a></li>
+                <li><a href="">Feedback</a></li>
+                <li><a href="">Services</a></li>
+              </ul>
+          </div>
+          <div class="footer-content">
+            <h4>CONTACT US</h4>
+            <p>[@email]</p> 
+            <p>{Address}</p> 
+            <p>{Phone number}</p>  
+            <p>[Location]</p> 
+          </div>
+          <div class="footer-content">
+            <h4>Follow US</h4>
+            <p>==========</p> 
+            <p>=-=-=-=-=-=-</p> 
+            <p>`````````````</p> 
+            <p>~~~~~~~~~~~~~~</p>   
+          </div>
+          
+       </div>
+    </footer>
+</html>

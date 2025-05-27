@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Website with Floating Feedback</title>
+  <style>
+    /* Floating button */
+    #feedback-btn {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #007BFF;
+      color: white;
+      border: none;
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      font-size: 30px;
+      cursor: pointer;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    }
+    /* Hidden feedback form */
+    #feedback-form {
+      display: none;
+      position: fixed;
+      bottom: 90px;
+      right: 20px;
+      background: white;
+      padding: 15px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      width: 300px;
+    }
+    #feedback-form textarea {
+      width: 100%;
+      height: 80px;
+    }
+    #feedback-form select, #feedback-form textarea, #feedback-form button {
+      margin-top: 8px;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Floating Button -->
+<button id="feedback-btn">💬</button>
+
+<!-- Feedback Form -->
+<div id="feedback-form">
+  <h4>Rate us</h4>
+  <form id="reviewForm">
+    <label>Rating:</label>
+    <select name="rating" required>
+      <option value="5">⭐️⭐️⭐️⭐️⭐️ (Excellent)</option>
+      <option value="4">⭐️⭐️⭐️⭐️ (Good)</option>
+      <option value="3">⭐️⭐️⭐️ (Average)</option>
+      <option value="2">⭐️⭐️ (Poor)</option>
+      <option value="1">⭐️ (Terrible)</option>
+    </select><br>
+    <label>Comment:</label><br>
+    <textarea name="comment" placeholder="Write your feedback..."></textarea><br>
+    <button type="submit">Submit</button>
+  </form>
+  <div id="form-message"></div>
+</div>
+
+<script>
+  const btn = document.getElementById('feedback-btn');
+  const form = document.getElementById('feedback-form');
+  const reviewForm = document.getElementById('reviewForm');
+  const formMessage = document.getElementById('form-message');
+
+  // Toggle form visibility
+  btn.addEventListener('click', () => {
+    form.style.display = (form.style.display === 'block') ? 'none' : 'block';
+  });
+
+  // Handle form submission
+  reviewForm.addEventListener('submit', function(e) {
+    e.preventDefault();
+    const formData = new FormData(reviewForm);
+    
+    fetch('save_review.php', {
+      method: 'POST',
+      body: formData
+    })
+    .then(response => response.text())
+    .then(data => {
+      if (data.trim() === 'success') {
+        formMessage.innerText = "Thank you for your feedback!";
+        reviewForm.reset();
+      } else {
+        formMessage.innerText = "Error saving review.";
+      }
+    })
+    .catch(error => {
+      formMessage.innerText = "Error: " + error;
+    });
+  });
+</script>
+
+</body>
+</html>
