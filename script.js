@@ -86,3 +86,139 @@ document.addEventListener("DOMContentLoaded", function () {
     // Initialize the first slide and first dot for Carousel 2
     showSlide2(currentSlide2);
 });
+document.getElementById("bookingForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    const location = document.getElementById("location").value;
+    const pickup = document.getElementById("pickupDate").value;
+    const returnDate = document.getElementById("returnDate").value;
+
+    if (!location || !pickup || !returnDate) {
+        alert("Please fill in all fields");
+        return;
+    }
+
+    console.log({
+        location,
+        pickup,
+        returnDate
+    });
+
+    // Redirect example
+    window.location.href = "Vehicles.html";
+});
+function scrollSlider(direction) {
+    const slider = document.getElementById("carSlider");
+    const scrollAmount = 300;
+
+    slider.scrollBy({
+        left: direction * scrollAmount,
+        behavior: "smooth"
+    });
+}
+// No JS needed for this section —
+// it's purely HTML/CSS layout.
+// If you want to animate it on scroll, add this:
+
+const appSection = document.querySelector('.app-section');
+
+if (appSection) {
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.style.opacity = '1';
+        entry.target.style.transform = 'translateY(0)';
+      }
+    });
+  }, { threshold: 0.15 });
+
+  appSection.style.opacity = '0';
+  appSection.style.transform = 'translateY(30px)';
+  appSection.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+
+  observer.observe(appSection);
+}
+// Scroll-in animation for news cards
+const newsCards = document.querySelectorAll('.news-card');
+
+if (newsCards.length) {
+  const newsObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => {
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'translateY(0)';
+        }, i * 120);
+        newsObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12 });
+
+  newsCards.forEach(card => {
+    card.style.opacity = '0';
+    card.style.transform = 'translateY(28px)';
+    card.style.transition = 'opacity 0.55s ease, transform 0.55s ease, box-shadow 0.3s, background 0.3s';
+    newsObserver.observe(card);
+  });
+}
+// Feedback tab
+function openFeedback() {
+  const msg = prompt("We'd love your feedback! What can we improve?");
+  if (msg && msg.trim()) {
+    alert("Thank you for your feedback! We appreciate it. 🙏");
+  }
+}
+
+// Footer link smooth scroll (if linking to page sections)
+document.querySelectorAll('.footer-col a[href^="#"]').forEach(link => {
+  link.addEventListener('click', function(e) {
+    const target = document.querySelector(this.getAttribute('href'));
+    if (target) {
+      e.preventDefault();
+      target.scrollIntoView({ behavior: 'smooth' });
+    }
+  });
+});
+
+// Animate footer columns on scroll into view
+const footerCols = document.querySelectorAll('.footer-col');
+if (footerCols.length) {
+  const footerObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => {
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'translateY(0)';
+        }, i * 80);
+        footerObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+
+  footerCols.forEach(col => {
+    col.style.opacity = '0';
+    col.style.transform = 'translateY(20px)';
+    col.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+    footerObserver.observe(col);
+  });
+}
+// FAQ2 — Netflix style accordion
+function toggleFaq2(btn) {
+  const answer = btn.nextElementSibling;
+  const isOpen = btn.classList.contains('open');
+
+  // Close all
+  document.querySelectorAll('.faq2-q').forEach(q => q.classList.remove('open'));
+  document.querySelectorAll('.faq2-a').forEach(a => a.classList.remove('open'));
+
+  // Open clicked if it was closed
+  if (!isOpen) {
+    btn.classList.add('open');
+    answer.classList.add('open');
+
+    // Smooth scroll so answer is visible on mobile
+    setTimeout(() => {
+      btn.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }, 100);
+  }
+}
